@@ -4,14 +4,14 @@ import java.io.*;
 
 /**
  * A Class that has a lot of uses that i use
- * 
+ *
  * @author John Elizarraras
  * @version 0.12
  */
 
 public class Solver
 {
-    
+
     private double t;
     private double d;
     private double xVelo;
@@ -37,15 +37,15 @@ public class Solver
     private double x;
     private double y;
     private String reply;
-	
-    
+
+
 /**
-@return returns hi because why not?
+@return returns new formulaSolver
 */
-    
-    public String formulaSolver()
+
+    public Solver Solver()
     {
-        
+
     System.out.println ("What do you need help with? (Type !commands if you want a list of commands you can solve for)");
     Scanner kbReader = new Scanner(System.in);
     response = kbReader.nextLine();
@@ -63,7 +63,7 @@ public class Solver
         System.out.println("!code - link to a gist of the code");
         System.out.println("!trigCalc - calculates all of the main trig functions");
         System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-        formulaSolver();
+
     }
     else if(response.equalsIgnoreCase("!timedistancepara"))
     {
@@ -97,7 +97,7 @@ public class Solver
         fifthPoint = new Point(t , 0);
         System.out.println("The Fifth Point To Graph Is " + fifthPoint);
         System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-        formulaSolver();
+
     }
     else if(response.equalsIgnoreCase("!polysolv"))
     {
@@ -112,7 +112,7 @@ public class Solver
         tX = ((-bX - Math.sqrt(Math.pow(bX,2)-(4*aX*cX)))/(2*aX));
         System.out.println("X can equal " + oX + " or " + tX +".");
         System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-        formulaSolver();
+
     }
     else if(response.equalsIgnoreCase("!end")
            || response.equalsIgnoreCase("end")
@@ -130,17 +130,17 @@ public class Solver
         final String ANSI_HOME = "\u001b[H";
         System.out.print(ANSI_CLS + ANSI_HOME);
         System.out.flush();
-        formulaSolver();
+
     }
     else if (response.equalsIgnoreCase("!classgen"))
     {
         Random rand = new Random();
         ranNum = rand.nextInt(9) + 0;
-        
+
         System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------");
         if(ranNum == 0)
         {
-            System.out.println("Pick Rogue"); 
+            System.out.println("Pick Rogue");
         }
         else if(ranNum == 1)
         {
@@ -179,19 +179,19 @@ public class Solver
             System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------");
         }
         System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-        formulaSolver();
+
     }
-   
-        
-    
+
+
+
     else if(response.equalsIgnoreCase("!code"))
     {
         System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------");
         System.out.println("view code at https://gist.github.com/iblacksand/2a64cf9a10bdc527483c");
         System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-        formulaSolver();
+
     }
-        
+
     else if(response.equalsIgnoreCase("!trigCalc"))
     {
         this.x = 0;
@@ -203,27 +203,27 @@ public class Solver
             {
             System.out.println("What is your angle?");
             x = kbReader.nextDouble();
-            
+
             System.out.println(Math.sin(x));
-            formulaSolver();
+
         }
         else if(response.equalsIgnoreCase("!tan")
           || response.equalsIgnoreCase("tan"))
             {
             System.out.println("What is your angle");
             x = kbReader.nextDouble();
-           
+
             System.out.println(Math.tan(x));
-            formulaSolver();
+
         }
          else if(response.equalsIgnoreCase("!cos")
           || response.equalsIgnoreCase("cos"))
             {
             System.out.println("What is your angle?");
             x = kbReader.nextDouble();
-            
+
             System.out.println(Math.cos(x));
-             formulaSolver();
+
         }
          else if(response.equalsIgnoreCase("!aTan")
           || response.equalsIgnoreCase("aTan"))
@@ -233,7 +233,7 @@ public class Solver
             System.out.println("What is your adjacent?");
             y = kbReader.nextDouble();
             System.out.println(Math.toDegrees(Math.atan(x/y)));
-             formulaSolver();
+
         }
          else if(response.equalsIgnoreCase("!asin")
           || response.equalsIgnoreCase("asin?"))
@@ -243,7 +243,7 @@ public class Solver
             System.out.println("What is your hypotenuse?");
             y = kbReader.nextDouble();
             System.out.println(Math.toDegrees(Math.asin(x/y)));
-             formulaSolver();
+
         }
          else if(response.equalsIgnoreCase("!acos")
           || response.equalsIgnoreCase("acos"))
@@ -253,17 +253,20 @@ public class Solver
             System.out.println("What is your hypotenuse");
             y = kbReader.nextDouble();
             System.out.println(Math.toDegrees(Math.acos(x/y)));
+
         }
-        
+
+
     }
-        
+
+
     else
     {
         System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------");
         System.out.println("ERROR NOT A COMMAND");
         System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-        formulaSolver();
+
     }
-        return reply;
+        return Solver();
     }
 }

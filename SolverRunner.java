@@ -9,10 +9,10 @@ public class SolverRunner
 {
     public static void main(String[] args)
         {
-        
-        
+
+
         Solver solv = new Solver();
-        System.out.println(solv.formulaSolver());
-        
+        System.out.println(solv.Solver());
+
     }
 }
